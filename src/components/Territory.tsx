@@ -91,7 +91,7 @@ export default function Territory({ onOpen }: { onOpen: (p: Project) => void }) 
       <div className="grid grid-cols-12 gap-x-6 gap-y-14">
         <div className="col-span-12 lg:col-span-4">
           <SectionLabel index="04" className="text-cal/60">Territorio</SectionLabel>
-          <h2 className="mt-10 font-serif text-5xl md:text-7xl lg:text-[4.6vw] leading-[0.95] tracking-[-0.015em]">
+          <h2 className="mt-10 font-serif text-[2.6rem] md:text-6xl lg:text-[3.8vw] leading-[1.02] tracking-[-0.025em]">
             <MaskLines lines={["Del Mulhacén", <><em className="text-almagra-claro">al</em> Mediterráneo.</>]} />
           </h2>
           <Reveal className="mt-8 text-[15px] leading-relaxed text-cal/65 max-w-md">

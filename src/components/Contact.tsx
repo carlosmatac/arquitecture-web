@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
+import { references } from "../data/references";
 import { MaskLines, NasridStar, Reveal, SectionLabel } from "./ui";
 
 const details = [
@@ -23,7 +24,7 @@ export default function Contact() {
       <div className="px-5 md:px-10 pt-28 md:pt-44">
         <SectionLabel index="05">Contacto</SectionLabel>
         <a href="mailto:andresmata@coagranada.org" className="group block mt-10">
-          <h2 className="font-serif text-[15vw] md:text-[10.5vw] leading-[0.88] tracking-[-0.02em]">
+          <h2 className="font-serif text-[11vw] md:text-[7.4vw] leading-[0.98] tracking-[-0.03em]">
             <MaskLines
               lines={[
                 "Hablemos de",
@@ -62,9 +63,28 @@ export default function Contact() {
           </span>
           <span>© {new Date().getFullYear()} Andrés Mata Caro</span>
         </div>
+        <details className="px-5 md:px-10 pt-6 group">
+          <summary className="label !text-[10px] text-cal/40 cursor-pointer hover:text-cal/70 transition-colors list-none">
+            Créditos de las imágenes de referencia <span className="inline-block transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <ul className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-1.5 text-[12px] text-cal/50">
+            {references.map((r) => (
+              <li key={r.slug}>
+                <a href={r.source} target="_blank" rel="noreferrer" className="hover:text-cal transition-colors">
+                  {r.name}
+                </a>{" "}
+                — {r.author},{" "}
+                <a href={r.licenseUrl} target="_blank" rel="noreferrer" className="underline decoration-cal/20 hover:text-cal">
+                  {r.license}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 text-[12px] text-cal/35">Wikimedia Commons. Imágenes recortadas. Obras de otros autores mostradas como referencia.</p>
+        </details>
         <motion.p
           style={{ y: wordmarkY }}
-          className="font-serif whitespace-nowrap text-[26vw] leading-[0.78] tracking-[-0.035em] text-center pt-8 -mb-[3vw] select-none"
+          className="font-serif whitespace-nowrap text-[19vw] leading-[0.8] tracking-[-0.04em] text-center pt-8 -mb-[3vw] select-none"
           aria-hidden="true"
         >
           Mata <em className="text-almagra-claro">Caro</em>

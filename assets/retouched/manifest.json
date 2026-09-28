@@ -1,0 +1,402 @@
+[
+  {
+    "id": "247417",
+    "source": "247417.jpg",
+    "image": "247417-profesional.png",
+    "prompt": "247417-profesional.prompt.txt",
+    "title": "Vista exterior del edificio de apartamentos",
+    "kind": "render",
+    "width": 1519,
+    "height": 1036
+  },
+  {
+    "id": "247419",
+    "source": "247419.jpg",
+    "image": "247419-profesional.png",
+    "prompt": "247419-profesional.prompt.txt",
+    "title": "Vista nocturna de la vivienda",
+    "kind": "render",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "247421",
+    "source": "247421.jpg",
+    "image": "247421-profesional.png",
+    "prompt": "247421-profesional.prompt.txt",
+    "title": "Vivienda en la urbanización San Javier",
+    "kind": "photo",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "247423",
+    "source": "247423.jpg",
+    "image": "247423-profesional.png",
+    "prompt": "247423-profesional.prompt.txt",
+    "title": "Vista de la plaza de acceso",
+    "kind": "render",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "247583",
+    "source": "247583.jpg",
+    "image": "247583-profesional.png",
+    "prompt": "247583-profesional.prompt.txt",
+    "title": "Vivienda de piedra en Capileira",
+    "kind": "photo",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "247584",
+    "source": "247584.jpg",
+    "image": "247584-profesional.png",
+    "prompt": "247584-profesional.prompt.txt",
+    "title": "Vista nocturna de la vivienda adosada",
+    "kind": "render",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "248280",
+    "source": "248280.jpg",
+    "image": "248280-profesional.png",
+    "prompt": "248280-profesional.prompt.txt",
+    "title": "Infografía exterior de vivienda en Nigüelas",
+    "kind": "render",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "248283",
+    "source": "248283.jpg",
+    "image": "248283-profesional.png",
+    "prompt": "248283-profesional.prompt.txt",
+    "title": "Vista aérea de Álora",
+    "kind": "aerial",
+    "width": 1520,
+    "height": 1035
+  },
+  {
+    "id": "248285",
+    "source": "248285.jpg",
+    "image": "248285-profesional.png",
+    "prompt": "248285-profesional.prompt.txt",
+    "title": "Vista 3D de la ordenación del sector AR-1",
+    "kind": "aerial",
+    "width": 1519,
+    "height": 1036
+  },
+  {
+    "id": "248297",
+    "source": "248297.jpg",
+    "image": "248297-profesional.png",
+    "prompt": "248297-profesional.prompt.txt",
+    "title": "Vista aérea del Parque de la Libertad",
+    "kind": "aerial",
+    "width": 1519,
+    "height": 1036
+  },
+  {
+    "id": "250936",
+    "source": "250936.jpg",
+    "image": "250936-profesional.png",
+    "prompt": "250936-profesional.prompt.txt",
+    "title": "Vista exterior del edificio en Monachil",
+    "kind": "render",
+    "width": 1514,
+    "height": 1039
+  },
+  {
+    "id": "250937",
+    "source": "250937.jpg",
+    "image": "250937-profesional.png",
+    "prompt": "250937-profesional.prompt.txt",
+    "title": "Fachada del edificio de 94 apartamentos",
+    "kind": "photo",
+    "width": 1520,
+    "height": 1035
+  },
+  {
+    "id": "250938",
+    "source": "250938.jpg",
+    "image": "250938-profesional.png",
+    "prompt": "250938-profesional.prompt.txt",
+    "title": "Fachada del edificio en calle Arabial",
+    "kind": "photo",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "250949",
+    "source": "250949.jpg",
+    "image": "250949-profesional.png",
+    "prompt": "250949-profesional.prompt.txt",
+    "title": "Fachada del edificio en calle Elvira",
+    "kind": "photo",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "250951",
+    "source": "250951.jpg",
+    "image": "250951-profesional.png",
+    "prompt": "250951-profesional.prompt.txt",
+    "title": "Fachada del edificio en Loja",
+    "kind": "photo",
+    "width": 1518,
+    "height": 1036
+  },
+  {
+    "id": "250954",
+    "source": "250954.jpg",
+    "image": "250954-profesional.png",
+    "prompt": "250954-profesional.prompt.txt",
+    "title": "Vista del conjunto residencial",
+    "kind": "render",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "250957",
+    "source": "250957.jpg",
+    "image": "250957-profesional.png",
+    "prompt": "250957-profesional.prompt.txt",
+    "title": "Fachada de la guardería",
+    "kind": "photo",
+    "width": 1519,
+    "height": 1036
+  },
+  {
+    "id": "250958",
+    "source": "250958.jpg",
+    "image": "250958-profesional.png",
+    "prompt": "250958-profesional.prompt.txt",
+    "title": "Fachada de las cinco viviendas",
+    "kind": "photo",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "250959",
+    "source": "250959.jpg",
+    "image": "250959-profesional.png",
+    "prompt": "250959-profesional.prompt.txt",
+    "title": "Fachada de la vivienda",
+    "kind": "photo",
+    "width": 1520,
+    "height": 1035
+  },
+  {
+    "id": "250971",
+    "source": "250971.jpg",
+    "image": "250971-profesional.png",
+    "prompt": "250971-profesional.prompt.txt",
+    "title": "Fachada de la vivienda",
+    "kind": "photo",
+    "width": 1519,
+    "height": 1036
+  },
+  {
+    "id": "250972",
+    "source": "250972.jpg",
+    "image": "250972-profesional.png",
+    "prompt": "250972-profesional.prompt.txt",
+    "title": "Fachada de la vivienda",
+    "kind": "photo",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "250975",
+    "source": "250975.png",
+    "image": "250975-profesional.png",
+    "prompt": "250975-profesional.prompt.txt",
+    "title": "Vivienda rehabilitada en Bubión",
+    "kind": "photo",
+    "width": 1086,
+    "height": 1448
+  },
+  {
+    "id": "250976",
+    "source": "250976.jpg",
+    "image": "250976-profesional.png",
+    "prompt": "250976-profesional.prompt.txt",
+    "title": "Fachada de la vivienda",
+    "kind": "photo",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "250992",
+    "source": "250992.jpg",
+    "image": "250992-profesional.png",
+    "prompt": "250992-profesional.prompt.txt",
+    "title": "Vista exterior del edificio multifuncional",
+    "kind": "render",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "250993",
+    "source": "250993.jpg",
+    "image": "250993-profesional.png",
+    "prompt": "250993-profesional.prompt.txt",
+    "title": "Fachada del consultorio médico",
+    "kind": "photo",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "250994",
+    "source": "250994.jpg",
+    "image": "250994-profesional.png",
+    "prompt": "250994-profesional.prompt.txt",
+    "title": "Vista de la ampliación deportiva",
+    "kind": "render",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "251019",
+    "source": "251019.jpg",
+    "image": "251019-profesional.png",
+    "prompt": "251019-profesional.prompt.txt",
+    "title": "Vista aérea de la plaza",
+    "kind": "render",
+    "width": 1519,
+    "height": 1036
+  },
+  {
+    "id": "251472",
+    "source": "251472.jpg",
+    "image": "251472-profesional.png",
+    "prompt": "251472-profesional.prompt.txt",
+    "title": "Vista nocturna de la sala multiusos",
+    "kind": "render",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "322547",
+    "source": "322547.jpg",
+    "image": "322547-profesional.png",
+    "prompt": "322547-profesional.prompt.txt",
+    "title": "Infografía del proyecto: vista exterior",
+    "kind": "render",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "322549",
+    "source": "322549.jpg",
+    "image": "322549-profesional.png",
+    "prompt": "322549-profesional.prompt.txt",
+    "title": "Infografía del proyecto: salón bajo cubierta",
+    "kind": "render",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "322554",
+    "source": "322554.jpg",
+    "image": "322554-profesional.png",
+    "prompt": "322554-profesional.prompt.txt",
+    "title": "Infografía del proyecto: doble altura",
+    "kind": "render",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "322653-322658",
+    "source": "322657.jpg",
+    "image": "322653-322658-profesional.png",
+    "prompt": "322653-322658-profesional.prompt.txt",
+    "title": "Piscina y porche",
+    "kind": "photo",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "322653",
+    "source": "322653.jpg",
+    "image": "322653-profesional.png",
+    "prompt": "322653-profesional.prompt.txt",
+    "title": "Espacio a doble altura con escalera",
+    "kind": "photo",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "322654",
+    "source": "322654.jpg",
+    "image": "322654-profesional.png",
+    "prompt": "322654-profesional.prompt.txt",
+    "title": "Salón bajo cubierta con ventanal a dos aguas",
+    "kind": "photo",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "322655",
+    "source": "322655.jpg",
+    "image": "322655-profesional.png",
+    "prompt": "322655-profesional.prompt.txt",
+    "title": "Galería interior de planta alta",
+    "kind": "photo",
+    "width": 1448,
+    "height": 1086
+  },
+  {
+    "id": "322656",
+    "source": "322656.jpg",
+    "image": "322656-profesional.png",
+    "prompt": "322656-profesional.prompt.txt",
+    "title": "Fachada exterior con la sierra al fondo",
+    "kind": "photo",
+    "width": 1448,
+    "height": 1086
+  },
+  {
+    "id": "322658",
+    "source": "322658.jpg",
+    "image": "322658-profesional.png",
+    "prompt": "322658-profesional.prompt.txt",
+    "title": "Terraza de planta alta",
+    "kind": "photo",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "322659",
+    "source": "322659.jpg",
+    "image": "322659-profesional.png",
+    "prompt": "322659-profesional.prompt.txt",
+    "title": "Porche exterior",
+    "kind": "photo",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "657928",
+    "source": "657928.jpg",
+    "image": "657928-profesional.png",
+    "prompt": "657928-profesional.prompt.txt",
+    "title": "Interior de la biblioteca",
+    "kind": "render",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "id": "657929",
+    "source": "657929.jpg",
+    "image": "657929-profesional.png",
+    "prompt": "657929-profesional.prompt.txt",
+    "title": "Vista exterior de la sala multiusos",
+    "kind": "render",
+    "width": 1536,
+    "height": 1024
+  }
+]

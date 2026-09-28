@@ -38,14 +38,14 @@ export default function Nav() {
       >
         <div className="flex items-start justify-between px-5 md:px-10 py-5 md:py-7">
           <a href="#inicio" className="group leading-none">
-            <span className="font-serif text-[26px] md:text-[30px] tracking-tight block">Andrés Mata Caro</span>
+            <span className="font-serif text-[21px] md:text-[24px] tracking-[-0.01em] block">Andrés Mata Caro</span>
             <span className="label !text-[10px] opacity-60 block mt-1">Arquitecto · Granada</span>
           </a>
 
           <nav className="hidden lg:flex items-center gap-9 pt-2">
             {sections.map((s, i) => (
               <a key={s.id} href={`#${s.id}`} className="group relative text-[13px] tracking-wide">
-                <span className="font-mono text-[10px] opacity-50 mr-1.5">0{i + 1}</span>
+                <span className="text-[10px] opacity-45 mr-1.5 tabular-nums">0{i + 1}</span>
                 {s.label}
                 <span className="absolute -bottom-1 left-0 h-px w-full origin-right scale-x-0 bg-current transition-transform duration-500 ease-[var(--ease-arch)] group-hover:origin-left group-hover:scale-x-100" />
               </a>
@@ -83,10 +83,10 @@ export default function Nav() {
                     initial={{ y: "100%" }}
                     animate={{ y: "0%" }}
                     transition={{ duration: 0.8, ease: EASE, delay: 0.25 + i * 0.06 }}
-                    className="flex items-baseline justify-between py-3 font-serif text-[13vw] leading-none"
+                    className="flex items-baseline justify-between py-3 font-serif text-[10vw] leading-none tracking-[-0.02em]"
                   >
                     {s.label}
-                    <span className="font-mono text-xs opacity-50">0{i + 1}</span>
+                    <span className="text-xs opacity-50 tabular-nums">0{i + 1}</span>
                   </motion.a>
                 </div>
               ))}

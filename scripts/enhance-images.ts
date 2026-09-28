@@ -1,7 +1,12 @@
 /**
- * Builds the project images in /public/projects from the originals in /assets/originals.
+ * Builds the project images in /public/projects.
  *
- *   npm run images                     -> local baseline for missing images (no AI)
+ * Source priority for every image:
+ *   1. /assets/retouched/<id>-profesional.png (manually retouched versions), or the file named in `retouched`
+ *   2. Gemini AI retouch of /assets/originals (only with --ai)
+ *   3. local upscale of /assets/originals
+ *
+ *   npm run images                     -> build missing/outdated images (retouched or local baseline)
  *   npm run images -- --ai             -> AI retouch (Gemini) for missing images
  *   npm run images -- --ai --force     -> regenerate everything
  *   npm run images -- --ai --only=slug -> only one project (or a single file: --only=slug/01.jpg)
@@ -21,9 +26,10 @@ loadEnv({ path: [".env.local", ".env"], quiet: true });
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const ORIGINALS = path.join(ROOT, "assets/originals");
+const RETOUCHED = path.join(ROOT, "assets/retouched");
 const OUTPUT = path.join(ROOT, "public/projects");
 const MODEL = process.env.GEMINI_IMAGE_MODEL ?? "gemini-3-pro-image";
-const MAX_WIDTH = 2400;
+const MAX_WIDTH = 2000;
 
 const args = process.argv.slice(2);
 const useAI = args.includes("--ai");
@@ -63,7 +69,11 @@ function closestAspectRatio(file: string) {
   });
 }
 
-type Mode = "ai" | "local";
+type Mode = "retouched" | "ai" | "local";
+const RANK: Record<Mode, number> = { local: 0, ai: 1, retouched: 2 };
+
+const retouchedFor = (image: ProjectImage) =>
+  path.join(RETOUCHED, image.retouched ?? `${path.parse(image.source).name}-profesional.png`);
 
 /** Each output is tagged with the mode that produced it, so AI runs can replace local baselines. */
 const producedBy = (file: string) =>
@@ -119,14 +129,16 @@ async function main() {
   for (const image of images) {
     const src = path.join(ORIGINALS, image.source);
     const out = path.join(OUTPUT, image.file);
-    const mode: Mode = ai && image.kind !== "plan" ? "ai" : "local";
-    const existing = producedBy(out);
-    if (!force && (existing === mode || existing === "ai")) continue;
+    const retouched = retouchedFor(image);
+    const mode: Mode = existsSync(retouched) ? "retouched" : ai && image.kind !== "plan" ? "ai" : "local";
+    const existing = producedBy(out) as Mode | undefined;
+    if (!force && existing && RANK[existing] >= RANK[mode]) continue;
     mkdirSync(path.dirname(out), { recursive: true });
 
     process.stdout.write(`${mode.padEnd(5)} ${image.file} ... `);
     try {
-      if (mode === "ai") await aiRetouch(ai!, image, src, out);
+      if (mode === "retouched") writeJpeg(retouched, out, "retouched");
+      else if (mode === "ai") await aiRetouch(ai!, image, src, out);
       else localBaseline(src, out);
       console.log("ok");
     } catch (error) {
