@@ -1,0 +1,7 @@
+{
+  "model": "arrow-2-telos",
+  "prompt": "Create ONE professional vector logo proposal for an independent architecture studio in Granada, Spain. Exact main wording: \"Andres Mata\" (no accent, correctly spelled, both words complete). Exact descriptor: \"ARQUITECTURA\". Do not add any other text. Design an original, understated, memorable identity suitable for architectural drawings, a website, signage and business cards. This is a finished logo lockup, NOT a brand presentation board or a mockup. SVG viewBox 0 0 1200 800, transparent background, centered with generous clear space. Use ONLY slate #292D2B and optionally red-earth #A34732. Flat vector shapes, no gradients, shadows, textures, photographs or ornamental detail. Logo must remain recognizable small and in one ink. Excellent optical balance and typography. Prefer all lettering as outlined vector paths for portability, avoid external font dependencies. Do not draw the artboard/background. Direction: A single abstract arch / doorway cut into a solid terracotta square, subtly implying the letter A. Mediterranean whitewashed architecture distilled into one powerful negative-space mark. Beneath, a sophisticated editorial serif wordmark. No ornamental Moorish illustration.",
+  "stream": false,
+  "n": 1,
+  "max_output_tokens": 20000
+}

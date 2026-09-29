@@ -1,6 +1,4 @@
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
-import { MaskLines, NasridStar, Reveal, SectionLabel } from "./ui";
+import { MaskLines, Reveal, SectionLabel } from "./ui";
 
 const details = [
   {
@@ -14,21 +12,17 @@ const details = [
 ];
 
 export default function Contact() {
-  const footerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: footerRef, offset: ["start end", "end end"] });
-  const wordmarkY = useTransform(scrollYProgress, [0, 1], ["40%", "0%"]);
-
   return (
-    <footer id="contacto" className="bg-cal">
+    <section id="contacto" className="bg-cal pb-28 md:pb-36">
       <div className="px-5 md:px-10 pt-28 md:pt-44">
         <SectionLabel index="05">Contacto</SectionLabel>
         <a href="mailto:andresmata@coagranada.org" className="group block mt-10">
-          <h2 className="font-serif text-[15vw] md:text-[10.5vw] leading-[0.88] tracking-[-0.02em]">
+          <h2 className="font-serif text-[11vw] md:text-[7.4vw] leading-[0.98] tracking-[-0.03em]">
             <MaskLines
               lines={[
                 "Hablemos de",
                 <>
-                  <em className="text-almagra">su</em> proyecto
+                  <span className="text-almagra">su</span> proyecto
                   <span className="inline-block ml-[0.15em] transition-transform duration-700 ease-[var(--ease-arch)] group-hover:translate-x-4 group-hover:-translate-y-4">
                     ↗
                   </span>
@@ -55,21 +49,6 @@ export default function Contact() {
         </div>
       </div>
 
-      <div ref={footerRef} className="mt-24 bg-pizarra text-cal overflow-hidden">
-        <div className="px-5 md:px-10 pt-10 flex flex-wrap gap-4 justify-between label !text-[10px] text-cal/50">
-          <span className="flex items-center gap-3">
-            <NasridStar className="w-3.5 h-3.5 text-almagra-claro" /> Arquitectura y urbanismo · Granada, desde 1993
-          </span>
-          <span>© {new Date().getFullYear()} Andrés Mata Caro</span>
-        </div>
-        <motion.p
-          style={{ y: wordmarkY }}
-          className="font-serif whitespace-nowrap text-[26vw] leading-[0.78] tracking-[-0.035em] text-center pt-8 -mb-[3vw] select-none"
-          aria-hidden="true"
-        >
-          Mata <em className="text-almagra-claro">Caro</em>
-        </motion.p>
-      </div>
-    </footer>
+    </section>
   );
 }

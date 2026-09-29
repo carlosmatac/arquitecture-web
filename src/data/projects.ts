@@ -22,6 +22,8 @@ export interface ProjectImage {
   source: string;
   kind: ImageKind;
   alt: string;
+  /** Retouched file in /assets/retouched when it isn't named `<source id>-profesional.png` */
+  retouched?: string;
   /** Extra instructions for the AI retouch of this specific image */
   notes?: string;
 }
@@ -48,8 +50,8 @@ export const projects: Project[] = [
       "Vivienda unifamiliar vacacional con piscina, doble altura y grandes huecos abiertos al paisaje del Valle de Lecrín.",
     featured: true,
     images: [
-      { file: "vivienda-vacacional-niguelas/01.jpg", source: "322656.jpg", kind: "photo", alt: "Fachada exterior con la sierra al fondo" },
-      { file: "vivienda-vacacional-niguelas/02.jpg", source: "322657.jpg", kind: "photo", alt: "Piscina y porche" },
+      { file: "vivienda-vacacional-niguelas/01.jpg", source: "322657.jpg", retouched: "322653-322658-profesional.png", kind: "photo", alt: "Piscina y fachada al patio" },
+      { file: "vivienda-vacacional-niguelas/02.jpg", source: "322656.jpg", kind: "photo", alt: "Fachada exterior con la sierra al fondo" },
       { file: "vivienda-vacacional-niguelas/03.jpg", source: "322654.jpg", kind: "photo", alt: "Salón bajo cubierta con ventanal a dos aguas" },
       { file: "vivienda-vacacional-niguelas/04.jpg", source: "322653.jpg", kind: "photo", alt: "Espacio a doble altura con escalera" },
       { file: "vivienda-vacacional-niguelas/05.jpg", source: "322655.jpg", kind: "photo", alt: "Galería interior de planta alta" },

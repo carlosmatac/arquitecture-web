@@ -6,11 +6,13 @@ import { municipalityOf } from "../data/territory";
 import { EASE, MaskLines } from "./ui";
 
 const filters: ("Todos" | Category)[] = ["Todos", "Edificación", "Urbanismo"];
+const INITIAL_ROWS = 8;
 const count = (f: (typeof filters)[number]) => (f === "Todos" ? projects : projects.filter((p) => p.category === f)).length;
 
 export default function ProjectIndex({ onOpen }: { onOpen: (p: Project) => void }) {
   const [filter, setFilter] = useState<(typeof filters)[number]>("Todos");
   const [hovered, setHovered] = useState<Project | null>(null);
+  const [expanded, setExpanded] = useState(false);
   const canHover = useMediaQuery("(hover: hover) and (min-width: 768px)");
 
   const mouseX = useMotionValue(0);
@@ -18,7 +20,8 @@ export default function ProjectIndex({ onOpen }: { onOpen: (p: Project) => void 
   const x = useSpring(mouseX, { stiffness: 180, damping: 22, mass: 0.6 });
   const y = useSpring(mouseY, { stiffness: 180, damping: 22, mass: 0.6 });
 
-  const list = filter === "Todos" ? projects : projects.filter((p) => p.category === filter);
+  const filtered = filter === "Todos" ? projects : projects.filter((p) => p.category === filter);
+  const list = expanded ? filtered : filtered.slice(0, INITIAL_ROWS);
 
   return (
     <section
@@ -30,18 +33,18 @@ export default function ProjectIndex({ onOpen }: { onOpen: (p: Project) => void 
       }}
     >
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-10">
-        <h2 className="font-serif text-5xl md:text-7xl leading-[0.95] tracking-[-0.015em]">
-          <MaskLines lines={["Índice de", <em className="text-almagra">proyectos</em>]} />
+        <h2 className="font-serif text-[2.6rem] md:text-6xl leading-[1.02] tracking-[-0.025em]">
+          <MaskLines lines={["Índice de", <span className="text-almagra">proyectos</span>]} />
         </h2>
-        <div className="flex gap-7">
+        <div className="flex flex-wrap gap-x-6 gap-y-2">
           {filters.map((f) => (
             <button
               key={f}
               onClick={() => setFilter(f)}
-              className={`relative font-serif text-2xl md:text-3xl transition-colors ${filter === f ? "text-pizarra" : "text-pizarra/35 hover:text-pizarra/70"}`}
+              className={`relative font-serif text-xl sm:text-2xl md:text-3xl transition-colors ${filter === f ? "text-pizarra" : "text-pizarra/35 hover:text-pizarra/70"}`}
             >
               {f}
-              <sup className="font-mono text-[10px] ml-1 align-super">{count(f)}</sup>
+              <sup className="text-[10px] ml-1 align-super tabular-nums">{count(f)}</sup>
               {filter === f && <motion.span layoutId="index-filter" className="absolute -bottom-1 left-0 right-0 h-px bg-pizarra" />}
             </button>
           ))}
@@ -72,8 +75,8 @@ export default function ProjectIndex({ onOpen }: { onOpen: (p: Project) => void 
                 onMouseEnter={() => setHovered(p)}
                 className="group w-full grid grid-cols-12 gap-x-6 gap-y-1 items-baseline py-5 md:py-6 text-left transition-opacity duration-300 md:group-hover/list:opacity-35 md:hover:!opacity-100"
               >
-                <span className="col-span-2 md:col-span-1 font-mono text-xs text-pizarra/50">{String(i + 1).padStart(2, "0")}</span>
-                <span className="col-span-10 md:col-span-5 font-serif text-2xl md:text-[2.1rem] leading-tight transition-transform duration-500 ease-[var(--ease-arch)] md:group-hover:translate-x-3">
+                <span className="col-span-2 md:col-span-1 text-xs text-pizarra/50 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
+                <span className="col-span-10 md:col-span-5 font-serif text-2xl md:text-[1.85rem] leading-tight tracking-[-0.01em] transition-transform duration-500 ease-[var(--ease-arch)] md:group-hover:translate-x-3">
                   {p.title}
                 </span>
                 <span className="col-start-3 col-span-10 md:col-start-auto md:col-span-3 text-[14px] text-pizarra/70">{municipalityOf(p)}</span>
@@ -86,6 +89,21 @@ export default function ProjectIndex({ onOpen }: { onOpen: (p: Project) => void 
           ))}
         </AnimatePresence>
       </ul>
+
+      {filtered.length > INITIAL_ROWS && (
+        <div className="mt-12 flex justify-center">
+          <button
+            onClick={() => {
+              if (expanded) document.getElementById("indice")?.scrollIntoView({ behavior: "smooth" });
+              setExpanded(!expanded);
+            }}
+            className="group inline-flex items-center gap-3 border border-pizarra/25 px-7 py-4 label !text-[12px] hover:bg-pizarra hover:text-cal hover:border-pizarra transition-colors duration-500"
+          >
+            {expanded ? "Ver menos" : `Ver todos los proyectos · ${filtered.length}`}
+            <span className={`transition-transform duration-500 ${expanded ? "rotate-180" : "group-hover:translate-y-0.5"}`}>↓</span>
+          </button>
+        </div>
+      )}
 
       {canHover && (
         <motion.div

@@ -3,17 +3,17 @@
 
 @theme {
   --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-serif: "Source Serif 4", ui-serif, Georgia, serif;
   --font-mono: "Geist Mono", ui-monospace, monospace;
 
   /* Cal (whitewash), piedra (stone), pizarra (launa slate), almagra (red earth) */
-  --color-cal: #f2ede4;
-  --color-cal-2: #e8e1d4;
+  --color-cal: #f8f6f1;
+  --color-cal-2: #efebe3;
   --color-piedra: #b9ad99;
-  --color-pizarra: #1e1d1b;
+  --color-pizarra: #1a1917;
   --color-pizarra-2: #2b2a27;
-  --color-almagra: #a5452b;
-  --color-almagra-claro: #d0764f;
+  --color-almagra: #b8441c;
+  --color-almagra-claro: #e27a4a;
 
   --ease-arch: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -26,18 +26,21 @@
   body {
     @apply bg-cal text-pizarra font-sans antialiased;
   }
+  .font-serif {
+    font-optical-sizing: auto;
+  }
   ::selection {
     @apply bg-almagra text-cal;
   }
 }
 
 @utility label {
-  @apply font-mono text-[11px] uppercase tracking-[0.18em];
+  @apply font-sans text-[11px] font-medium uppercase tracking-[0.14em];
 }
 
-/* Unifies the tone of heterogeneous photos and renders */
+/* Gentle, consistent finishing for heterogeneous photos and renders */
 @utility graded {
-  filter: saturate(0.6) sepia(0.22) contrast(1.03) brightness(1.03);
+  filter: contrast(1.04) saturate(1.06);
 }
 
 .grain {
@@ -45,7 +48,7 @@
   inset: -50%;
   z-index: 90;
   pointer-events: none;
-  opacity: 0.09;
+  opacity: 0.035;
   mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }

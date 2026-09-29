@@ -175,16 +175,14 @@ function renderStroke(s: Stroke, i: number) {
       strokeLinecap="round"
       strokeLinejoin="round"
       className={s.tone === "accent" ? "text-almagra" : s.tone === "faint" ? "opacity-45" : ""}
-      initial={{ pathLength: 0 }}
-      animate={{ pathLength: 1 }}
-      transition={{ delay: s.back ? 0.1 : delayFor(s.x), duration: s.back ? 2.6 : 1.3, ease: [0.45, 0, 0.2, 1] }}
+      variants={{ hidden: { pathLength: 0 }, shown: { pathLength: 1, transition: { delay: s.back ? 0.1 : delayFor(s.x), duration: s.back ? 2.6 : 1.3, ease: [0.45, 0, 0.2, 1] } } }}
     />
   );
 }
 
 export default function HeroDrawing({ className = "" }: { className?: string }) {
   return (
-    <svg viewBox={`0 0 ${W + 44} ${H}`} className={className} role="img" aria-label="Dibujo en alzado de un pueblo alpujarreño, una vivienda contemporánea y un bloque de viviendas">
+    <motion.svg initial="hidden" whileInView="shown" viewport={{ once: true, amount: 0.3 }} viewBox={`0 0 ${W + 44} ${H}`} className={className} role="img" aria-label="Dibujo en alzado de un pueblo alpujarreño, una vivienda contemporánea y un bloque de viviendas">
       <defs>
         <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
           <line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" strokeWidth="0.6" />
@@ -194,9 +192,7 @@ export default function HeroDrawing({ className = "" }: { className?: string }) 
       <motion.path
         d={`M0 205H170V235H330V262H500V290H660V${G}H${W}V334H0Z`}
         fill="url(#hatch)"
-        opacity={0}
-        animate={{ opacity: 0.22 }}
-        transition={{ delay: 2.4, duration: 1.2 }}
+        variants={{ hidden: { opacity: 0 }, shown: { opacity: 0.22, transition: { delay: 2.4, duration: 1.2 } } }}
       />
 
       {strokes.map((s, i) => s.back && renderStroke(s, i))}
@@ -206,9 +202,7 @@ export default function HeroDrawing({ className = "" }: { className?: string }) 
           key={`f${i}`}
           d={f.d}
           className="fill-cal"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: delayFor(f.x), duration: 0.4 }}
+          variants={{ hidden: { opacity: 0 }, shown: { opacity: 1, transition: { delay: delayFor(f.x), duration: 0.4 } } }}
         />
       ))}
 
@@ -217,9 +211,7 @@ export default function HeroDrawing({ className = "" }: { className?: string }) 
       {notes.map((n, i) => (
         <motion.g
           key={`n${i}`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2.6 + i * 0.12, duration: 0.8 }}
+          variants={{ hidden: { opacity: 0 }, shown: { opacity: 1, transition: { delay: 2.6 + i * 0.12, duration: 0.8 } } }}
           className="font-mono"
         >
           <circle cx={n.ax} cy={n.ay} r="2.2" className="fill-almagra" />
@@ -238,9 +230,7 @@ export default function HeroDrawing({ className = "" }: { className?: string }) 
       ))}
 
       <motion.g
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 3, duration: 0.8 }}
+        variants={{ hidden: { opacity: 0 }, shown: { opacity: 1, transition: { delay: 3, duration: 0.8 } } }}
         className="font-mono fill-current"
         fontSize="10.5"
         letterSpacing="1.2"
@@ -253,6 +243,6 @@ export default function HeroDrawing({ className = "" }: { className?: string }) 
         <text x="900" y="356" opacity="0.6">B · ARQUITECTURA CONTEMPORÁNEA</text>
         <text x={W - 16} y="356" opacity="0.6" textAnchor="end">ALZADO — E 1:500</text>
       </motion.g>
-    </svg>
+    </motion.svg>
   );
 }

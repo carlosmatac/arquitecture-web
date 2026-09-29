@@ -35,8 +35,8 @@ export default function Services() {
       <div className="grid grid-cols-12 gap-6 items-end">
         <div className="col-span-12 lg:col-span-7">
           <SectionLabel index="02">Servicios</SectionLabel>
-          <h2 className="mt-10 font-serif text-5xl md:text-7xl lg:text-[5.6vw] leading-[0.95] tracking-[-0.015em]">
-            <MaskLines lines={["Del primer croquis", <><em className="text-almagra">a la última</em> piedra.</>]} />
+          <h2 className="mt-10 font-serif text-[2.6rem] md:text-6xl lg:text-[4.2vw] leading-[1.02] tracking-[-0.025em]">
+            <MaskLines lines={["Del primer croquis", <><span className="text-almagra">a la última</span> piedra.</>]} />
           </h2>
         </div>
         <Reveal className="col-span-12 lg:col-span-4 lg:col-start-9 text-[15px] leading-relaxed text-pizarra/75">
@@ -50,8 +50,8 @@ export default function Services() {
           <li key={s.title} className="group relative border-t border-pizarra/20 overflow-hidden">
             <span className="absolute inset-0 bg-pizarra origin-bottom scale-y-0 transition-transform duration-700 ease-[var(--ease-arch)] group-hover:scale-y-100" />
             <Reveal className="relative grid grid-cols-12 gap-x-6 gap-y-3 py-8 md:py-10 transition-colors duration-500 group-hover:text-cal">
-              <span className="col-span-2 md:col-span-1 font-mono text-xs pt-3 opacity-60">0{i + 1}</span>
-              <h3 className="col-span-10 md:col-span-4 font-serif text-4xl md:text-6xl leading-none transition-transform duration-700 ease-[var(--ease-arch)] group-hover:translate-x-3">
+              <span className="col-span-2 md:col-span-1 text-xs pt-3 opacity-60 tabular-nums">0{i + 1}</span>
+              <h3 className="col-span-10 md:col-span-4 font-serif text-4xl md:text-5xl leading-none tracking-[-0.02em] transition-transform duration-700 ease-[var(--ease-arch)] group-hover:translate-x-3">
                 {s.title}
               </h3>
               <p className="col-span-12 md:col-span-4 md:col-start-6 text-[15px] leading-relaxed opacity-75">{s.text}</p>
