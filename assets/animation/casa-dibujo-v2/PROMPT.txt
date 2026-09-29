@@ -1,0 +1,7 @@
+Created with built-in ImageGen, four independent edits of imagen2.jpg.
+Edit the supplied architectural ink sketch into ONE animation frame, not a grid or contact sheet. This is frame-by-frame hand drawn 'line boil': retrace EVERY line slightly differently, organic tiny contour deviations, varied pen pressure and hatch angles. Same exact house DESIGN and silhouette, same window and door positions and counts, same long glazed wing with all mullions, same cantilever roof, same chimney, same two trees. Preserve camera, scale, placement, whitespace, 2752x1536 landscape canvas aspect ratio, black ink on white paper. Do not redesign or shift the building, change perspective, crop or add elements. Lines should tremble subtly like a human redrawing the same drawing on tracing paper, not wavy melting architecture. No new shading, no color, no text. Two small stick figures walking left and two wisps of chimney smoke moving gently. Redraw ground lines naturally too. Output a single complete frame.
+Frame 1: leading leg forward, smoke left then right.
+Frame 2: passing walking pose, smoke to right.
+Frame 3: opposite leg forward, taller smoke to left.
+Frame 4: next walking pose, smoke bending right.
+Outputs resized to original canvas size 2752 x 1536. Native generation size 1678 x 937.

@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { lockScroll } from "../lib/smoothScroll";
+import Logo from "./Logo";
 import { EASE } from "./ui";
 
 export const sections = [
@@ -22,9 +23,26 @@ function useGranadaTime() {
   return time;
 }
 
+function useActiveSection() {
+  const [active, setActive] = useState<string | null>(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
+      { rootMargin: "-45% 0px -50% 0px" },
+    );
+    ["inicio", ...sections.map((s) => s.id)].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+  return active;
+}
+
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const time = useGranadaTime();
+  const active = useActiveSection();
 
   useEffect(() => lockScroll(open), [open]);
 
@@ -33,27 +51,32 @@ export default function Nav() {
       <motion.header
         initial={{ opacity: 0, y: -12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: EASE, delay: 0.2 }}
-        className="fixed top-0 inset-x-0 z-50 mix-blend-difference text-white"
+        transition={{ duration: 0.9, ease: EASE, delay: 0.1 }}
+        className="fixed top-0 inset-x-0 z-50 bg-cal border-b border-pizarra/10 text-pizarra"
       >
-        <div className="flex items-start justify-between px-5 md:px-10 py-5 md:py-7">
-          <a href="#inicio" className="group leading-none">
-            <span className="font-serif text-[21px] md:text-[24px] tracking-[-0.01em] block">Andrés Mata Caro</span>
-            <span className="label !text-[10px] opacity-60 block mt-1">Arquitecto · Granada</span>
+        <div className="flex h-16 md:h-[72px] items-center justify-between px-5 md:px-10">
+          <a href="#inicio" className="block" aria-label="Andrés Mata · Arquitectura, inicio">
+            <Logo className="h-8 md:h-9 w-auto" />
           </a>
 
-          <nav className="hidden lg:flex items-center gap-9 pt-2">
-            {sections.map((s, i) => (
-              <a key={s.id} href={`#${s.id}`} className="group relative text-[13px] tracking-wide">
-                <span className="text-[10px] opacity-45 mr-1.5 tabular-nums">0{i + 1}</span>
+          <nav className="hidden lg:flex items-center gap-10">
+            {sections.map((s) => (
+              <a
+                key={s.id}
+                href={`#${s.id}`}
+                className={`relative text-[14px] tracking-wide transition-colors duration-300 hover:text-almagra ${active === s.id ? "text-almagra" : ""}`}
+              >
                 {s.label}
-                <span className="absolute -bottom-1 left-0 h-px w-full origin-right scale-x-0 bg-current transition-transform duration-500 ease-[var(--ease-arch)] group-hover:origin-left group-hover:scale-x-100" />
+                <span
+                  className={`absolute -bottom-1.5 left-0 h-px w-full bg-almagra origin-left transition-transform duration-500 ease-[var(--ease-arch)] ${active === s.id ? "scale-x-100" : "scale-x-0"}`}
+                />
               </a>
             ))}
-            <span className="label !text-[10px] opacity-60 tabular-nums">Granada {time}</span>
           </nav>
 
-          <button onClick={() => setOpen(true)} className="lg:hidden label pt-2" aria-label="Abrir menú">
+          <span className="hidden lg:inline label !text-[10px] text-pizarra/55 tabular-nums">Granada {time}</span>
+
+          <button onClick={() => setOpen(true)} className="lg:hidden label" aria-label="Abrir menú">
             Menú
           </button>
         </div>
@@ -66,11 +89,11 @@ export default function Nav() {
             animate={{ clipPath: "inset(0 0 0% 0)" }}
             exit={{ clipPath: "inset(0 0 100% 0)" }}
             transition={{ duration: 0.8, ease: EASE }}
-            className="fixed inset-0 z-[70] bg-pizarra text-cal flex flex-col px-5 py-5"
+            className="fixed inset-0 z-[70] bg-pizarra text-cal flex flex-col px-5 py-6"
           >
-            <div className="flex justify-between items-start">
-              <span className="font-serif text-[26px]">Andrés Mata Caro</span>
-              <button onClick={() => setOpen(false)} className="label pt-2" aria-label="Cerrar menú">
+            <div className="flex justify-between items-center">
+              <Logo className="h-8 w-auto" />
+              <button onClick={() => setOpen(false)} className="label" aria-label="Cerrar menú">
                 Cerrar
               </button>
             </div>

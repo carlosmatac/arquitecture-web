@@ -65,7 +65,7 @@ export default function Studio() {
 
         <div className="col-span-12 md:col-span-7 lg:col-start-6">
           <h2 className="font-serif text-[2.6rem] md:text-6xl lg:text-[4.2vw] leading-[1.02] tracking-[-0.025em]">
-            <MaskLines lines={[<>{years} años <em className="text-almagra">haciendo</em></>, "arquitectura en Granada."]} />
+            <MaskLines lines={[<>{years} años <span className="text-almagra">haciendo</span></>, "arquitectura en Granada."]} />
           </h2>
 
           <div className="mt-12 grid sm:grid-cols-2 gap-8 text-[15px] leading-relaxed text-pizarra/75 max-w-3xl">

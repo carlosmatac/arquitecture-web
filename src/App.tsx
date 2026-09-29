@@ -7,6 +7,7 @@ import { MotionConfig } from "motion/react";
 import { useCallback, useState } from "react";
 import Contact from "./components/Contact";
 import FeaturedWork from "./components/FeaturedWork";
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Manifesto, { Marquee } from "./components/Manifesto";
 import Nav from "./components/Nav";
@@ -36,8 +37,9 @@ export default function App() {
         <FeaturedWork onOpen={setSelected} />
         <ProjectIndex onOpen={setSelected} />
         <Territory onOpen={setSelected} />
+        <Contact />
       </main>
-      <Contact />
+      <Footer />
       <ProjectModal project={selected} onClose={close} />
     </MotionConfig>
   );

@@ -34,7 +34,7 @@ export default function ProjectIndex({ onOpen }: { onOpen: (p: Project) => void 
     >
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-10">
         <h2 className="font-serif text-[2.6rem] md:text-6xl leading-[1.02] tracking-[-0.025em]">
-          <MaskLines lines={["Índice de", <em className="text-almagra">proyectos</em>]} />
+          <MaskLines lines={["Índice de", <span className="text-almagra">proyectos</span>]} />
         </h2>
         <div className="flex flex-wrap gap-x-6 gap-y-2">
           {filters.map((f) => (

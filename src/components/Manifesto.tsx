@@ -15,7 +15,7 @@ const typologies = [
 export function Marquee() {
   const row = typologies.map((t) => (
     <Fragment key={t}>
-      <span className="font-serif italic">{t}</span>
+      <span className="font-serif">{t}</span>
       <NasridStar className="w-5 h-5 md:w-7 md:h-7 text-almagra shrink-0" />
     </Fragment>
   ));
@@ -37,7 +37,7 @@ function Word({ word, progress, range }: { word: string; progress: MotionValue<n
   const opacity = useTransform(progress, range, [0.14, 1]);
   const accent = word.startsWith("*");
   return (
-    <motion.span style={{ opacity }} className={accent ? "italic text-almagra-claro" : ""}>
+    <motion.span style={{ opacity }} className={accent ? "text-almagra-claro" : ""}>
       {word.replaceAll("*", "")}{" "}
     </motion.span>
   );

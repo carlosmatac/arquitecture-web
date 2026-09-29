@@ -16,7 +16,7 @@ export default function Hero() {
       {desktop && (
         <motion.div
           style={{ y: gridY }}
-          className="absolute right-0 top-[92px] w-[70vw] max-w-[1240px] pb-14 text-pizarra [mask-image:linear-gradient(to_right,rgba(0,0,0,0.3),#000_32%)]"
+          className="absolute right-0 top-[96px] w-[70vw] max-w-[1240px] pb-14 text-pizarra [mask-image:linear-gradient(to_right,rgba(0,0,0,0.3),#000_32%)]"
         >
           <GeometricGrid minImageCol={3} className="w-full" />
         </motion.div>
@@ -34,7 +34,7 @@ export default function Hero() {
             Estudio de arquitectura · Granada, desde 1993
           </motion.p>
           <h1 className="font-serif font-normal tracking-[-0.025em] leading-[1.02] text-[13vw] sm:text-[9vw] lg:text-[5.3vw]">
-            <MaskLines onMount delay={0.3} lines={["Arquitectura que", <>nace del <em className="text-almagra">lugar.</em></>]} />
+            <MaskLines onMount delay={0.3} lines={["Arquitectura que", <>nace del <span className="text-almagra">lugar.</span></>]} />
           </h1>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: EASE, delay: 0.9 }}>
             <p className="mt-8 text-[17px] leading-relaxed text-pizarra/75 max-w-md">

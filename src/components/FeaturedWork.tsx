@@ -53,7 +53,7 @@ function Intro() {
       <div>
         <SectionLabel index="03">Obra</SectionLabel>
         <h2 className="mt-10 font-serif text-[2.6rem] md:text-6xl lg:text-[4.2vw] leading-[1.02] tracking-[-0.025em]">
-          <MaskLines lines={["Obra", <em className="text-almagra">seleccionada</em>]} />
+          <MaskLines lines={["Obra", <span className="text-almagra">seleccionada</span>]} />
         </h2>
       </div>
       <Reveal className="mt-8 lg:mt-0 max-w-sm text-[15px] leading-relaxed text-pizarra/70">
@@ -113,7 +113,7 @@ export default function FeaturedWork({ onOpen }: { onOpen: (p: Project) => void 
           <a href="#indice" className="group shrink-0 self-center w-[26vw] flex flex-col items-start gap-6">
             <span className="label text-pizarra/50">Índice completo</span>
             <span className="font-serif text-5xl leading-[1.02] tracking-[-0.02em]">
-              Ver los {projects.length} <em className="text-almagra">proyectos</em>
+              Ver los {projects.length} <span className="text-almagra">proyectos</span>
             </span>
             <span className="font-serif text-5xl transition-transform duration-500 group-hover:translate-y-2">↓</span>
           </a>

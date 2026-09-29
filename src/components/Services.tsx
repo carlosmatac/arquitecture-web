@@ -36,7 +36,7 @@ export default function Services() {
         <div className="col-span-12 lg:col-span-7">
           <SectionLabel index="02">Servicios</SectionLabel>
           <h2 className="mt-10 font-serif text-[2.6rem] md:text-6xl lg:text-[4.2vw] leading-[1.02] tracking-[-0.025em]">
-            <MaskLines lines={["Del primer croquis", <><em className="text-almagra">a la última</em> piedra.</>]} />
+            <MaskLines lines={["Del primer croquis", <><span className="text-almagra">a la última</span> piedra.</>]} />
           </h2>
         </div>
         <Reveal className="col-span-12 lg:col-span-4 lg:col-start-9 text-[15px] leading-relaxed text-pizarra/75">
