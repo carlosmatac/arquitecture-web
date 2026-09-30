@@ -39,3 +39,10 @@ Vite + React 19 + Tailwind v4 + motion + Lenis (smooth scroll). Single page comp
 - Private preview: `middleware.ts` (Vercel Routing Middleware) applies HTTP Basic Auth with env vars `SITE_USER` / `SITE_PASSWORD` (Production + Preview). Deleting `SITE_PASSWORD` and redeploying makes the site public.
 - `.vercelignore` excludes `assets/` (source images, ~100 MB) – the build only needs `public/`.
 - Current domain andres-mata-caro.es: registered/DNS at IONOS (ui-dns nameservers), old site on IONOS MyWebsite, MX records point to IONOS mail.
+
+## Territory map
+- Background map: `src/assets/granada-costa-map.svg` (cleaned copy of `assets/maps/quiver-arrow-2-telos/granada-costa.svg`: baked town dots/labels removed, fonts switched to Source Serif 4 / Geist), inlined with `?raw` so markers share its 1400×950 coordinate space.
+- The illustration is not surveyed: `Territory.tsx` maps lat/lon with an affine least-squares fit over anchors the drawing locates (Granada, Loja, Nigüelas, Capileira, La Herradura, Motril, Mulhacén) plus inverse-distance residual correction, so anchors land exactly. If the SVG changes, update the anchor pixel positions.
+- Municipalities outside the drawing (Jaén, Benamaurel, Álora) are shown as edge arrows.
+- Map animations: engraving entrance (WAAPI on the injected SVG: relief paths draw north→south, reused fronds fade in, then sea/coast), drafting-lamp glow (radial gradient, `mix-blend-mode: screen`, follows pointer or glides to the active municipality) and a gentle tide on `#bathymetry` (CSS in `index.css`). Markers appear after the engraving (~2 s).
+- The map SVG is injected once via `innerHTML` in a layout effect – never use `dangerouslySetInnerHTML` there: re-renders replace the nodes and kill running animations.

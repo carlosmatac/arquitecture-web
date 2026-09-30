@@ -23,8 +23,6 @@ const coordinates: Record<string, LatLon> = {
   Jaén: [37.7796, -3.7849],
 };
 
-export const STUDIO: LatLon = [37.1747, -3.6006];
-export const MULHACEN: LatLon = [37.0533, -3.3114];
 
 export const municipalityOf = (project: Project) => {
   const parts = project.location.split(", ");

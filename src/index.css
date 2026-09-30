@@ -68,7 +68,40 @@
   }
 }
 
+/* Territory map: the sea's depth lines rock gently, each with its own rhythm */
+@keyframes tide {
+  from {
+    translate: -10px 0;
+  }
+  to {
+    translate: 10px 2px;
+  }
+}
+.territory-map #bathymetry path {
+  animation: tide 9s ease-in-out infinite alternate;
+}
+.territory-map #bathymetry path:nth-child(2) {
+  animation-duration: 11s;
+  animation-delay: -3s;
+}
+.territory-map #bathymetry path:nth-child(3) {
+  animation-duration: 7.5s;
+  animation-delay: -5s;
+}
+.territory-map #bathymetry path:nth-child(4) {
+  animation-duration: 12.5s;
+  animation-delay: -2s;
+}
+.territory-map #bathymetry path:nth-child(5) {
+  animation-duration: 8.5s;
+  animation-delay: -6s;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .territory-map #bathymetry path {
+    animation: none;
+  }
+
   .animate-marquee,
   .animate-pan {
     animation: none !important;
